@@ -13,6 +13,8 @@ export class HeroService {
   constructor(private http: HttpClient) { }
 
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>('https://fakerapi.it/api/v2/users');
+    let heroesData = this.http.get<Hero[]>('https://fakerapi.it/api/v2/users');
+    console.log(heroesData);
+    return heroesData;
   }
 }
